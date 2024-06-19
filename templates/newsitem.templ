@@ -1,6 +1,13 @@
 package templates
 
-templ NewsItem(name string) {
-  <div>NewsItem { name }</div>
+import "gohome/models"
+
+templ NewsItem(newsItem models.NewsItem) {
+  <div class="w-full">
+    @header(newsItem.Title)
+    <div class="w-full main-news-body"> 
+       @templ.Raw(newsItem.Content)
+    </div>
+  </div>
 
 }

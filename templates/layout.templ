@@ -1,0 +1,22 @@
+package templates
+
+//import "github.com/a-h/templ" 
+
+templ Layout(bodyContents templ.Component) {
+<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>MADHOSS</title>
+			<link rel="stylesheet" href="/assets/css/main.css"/>
+		</head>
+		<body class="">
+    @Navbar()
+      <div class="w-full flex justify-center">
+        <div class="w-full max-w-3xl">
+          @bodyContents
+        </div>
+      </div>
+		</body>
+	</html>
+}

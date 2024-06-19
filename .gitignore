@@ -24,3 +24,6 @@ km*.json
 
 # node_modules, as we don't need to upload our js libs
 node_modules
+
+# data file for pocketbase
+pb_data

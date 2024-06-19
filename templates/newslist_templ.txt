@@ -1,1 +1,6 @@
-<div>NewsList</div>
+<div class=\"w-full\">
+<div class=\"flex justify-center text-center\">
+<a class=\"btn btn-outline pb-1 w-full\" href=\"
+\">
+</a>
+</div></div>

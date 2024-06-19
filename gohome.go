@@ -34,7 +34,12 @@ func setupWebsite(e *core.ServeEvent) error {
 	e.Router.Static("/assets", "assets")
 	e.Router.GET("/", echo.WrapHandler(templ.Handler(component)))
 
-	e.Router.GET("/news/:name", 
+	e.Router.GET("/news", 
+    func(c echo.Context) error {
+		return controllers.NewsListController(e.App, c)
+	})
+
+	e.Router.GET("/news/:id", 
     func(c echo.Context) error {
 		return controllers.NewsItemController(e.App, c)
 	})

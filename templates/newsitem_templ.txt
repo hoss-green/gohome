@@ -1,2 +1,3 @@
-<div>NewsItem 
-</div>
+<div class=\"w-full\">
+<div class=\"w-full main-news-body\">
+</div></div>

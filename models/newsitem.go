@@ -7,3 +7,4 @@ type NewsItem struct {
 	Title   string `db:"title" json:"title"`
 	Content string `db:"content" json:"content"`
 }
+

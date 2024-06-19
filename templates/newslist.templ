@@ -1,6 +1,18 @@
 package templates
+ 
+import (
+  "fmt"
+  "gohome/models"
+)
 
-templ NewsList() {
-  <div>NewsList</div>
+templ NewsList(newsListItems []models.NewsListItem) {
+  <div class="w-full">
+    @header("News Feed")
+    <div class="flex justify-center text-center">
+      for _, item := range newsListItems {
+        <a class="btn btn-outline pb-1 w-full" href={ templ.SafeURL(fmt.Sprintf("/news/%s", item.Id)) }>{item.Title}</a>
+      }
+    </div>
+  </div>
 }
 

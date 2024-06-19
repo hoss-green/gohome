@@ -7,20 +7,13 @@ import (
 
 	"github.com/a-h/templ"
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/dbx"
 	"github.com/pocketbase/pocketbase/core"
 )
 
-func NewsItemController(e core.App, c echo.Context) error {
-	id := c.PathParam("id")
+func NewsListController(e core.App, c echo.Context) error {
+	newsListItems := []models.NewsListItem{}
 
-	newsitem := models.NewsItem{}
-
-	err := e.Dao().DB().NewQuery("SELECT id, created, updated, title, content FROM news_items WHERE id = {:id}").
-		Bind(dbx.Params{
-			"id": id,
-		}).
-		One(&newsitem)
+	err := e.Dao().DB().NewQuery("SELECT id, title FROM news_items").All(&newsListItems)
 
 	if err != nil {
 		log.Printf("Select Error: %s\r\n", err)
@@ -31,6 +24,5 @@ func NewsItemController(e core.App, c echo.Context) error {
 		return c.String(500, string(val))
 	}
 
-	return render(c, templates.NewsItem(newsitem))
-	// c.String()
+	return render(c, templates.NewsList(newsListItems))
 }
