@@ -10,7 +10,7 @@ templ NewsList(newsListItems []models.NewsListItem) {
     @header("News Feed")
     <div class="flex justify-center text-center">
       for _, item := range newsListItems {
-        <a class="btn btn-outline pb-1 w-full" href={ templ.SafeURL(fmt.Sprintf("/news/%s", item.Id)) }>{item.Title}</a>
+        <a class="btn btn-outline pb-1 w-full border-opacity-50" href={ templ.SafeURL(fmt.Sprintf("/news/%s", item.Id)) }>{item.Title}</a>
       }
     </div>
   </div>

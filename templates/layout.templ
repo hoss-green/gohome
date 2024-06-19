@@ -1,7 +1,5 @@
 package templates
 
-//import "github.com/a-h/templ" 
-
 templ Layout(bodyContents templ.Component) {
 <html>
 		<head>
@@ -13,7 +11,7 @@ templ Layout(bodyContents templ.Component) {
 		<body class="">
     @Navbar()
       <div class="w-full flex justify-center">
-        <div class="w-full max-w-3xl">
+        <div class="w-full max-w-3xl mx-2">
           @bodyContents
         </div>
       </div>

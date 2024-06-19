@@ -1,6 +1,6 @@
 <div class=\"w-full\">
 <div class=\"flex justify-center text-center\">
-<a class=\"btn btn-outline pb-1 w-full\" href=\"
+<a class=\"btn btn-outline pb-1 w-full border-opacity-50\" href=\"
 \">
 </a>
 </div></div>

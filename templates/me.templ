@@ -1,5 +1,12 @@
 package templates
 
-templ MePage() {
-  <div>AboutMe</div>
+import "gohome/models"
+
+templ MePage(pageModel models.PageItem) {
+  <div class="w-full">
+    @header(pageModel.Title)
+    <div class="w-full main-news-body"> 
+       @templ.Raw(pageModel.Content)
+    </div>
+  </div>
 }
