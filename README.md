@@ -1,2 +1,2 @@
 # GoHome
-Pesonal website for me to learn go.
+Pesonal website written in GO with templ & pocketbase, single executable.
