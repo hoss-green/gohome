@@ -1,18 +1,11 @@
 package main
 
 import (
-	"github.com/a-h/templ"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
-
-	// "github.com/pocketbase/pocketbase/apis"
 	"gohome/controllers"
-	"gohome/templates"
 	"log"
-
 	"github.com/pocketbase/pocketbase/core"
-	// "net/http"
-	// "os"
 )
 
 func main() {
@@ -30,9 +23,12 @@ func createApp() *pocketbase.PocketBase {
 }
 
 func setupWebsite(e *core.ServeEvent) error {
-	component := templates.Base()
 	e.Router.Static("/assets", "assets")
-	e.Router.GET("/", echo.WrapHandler(templ.Handler(component)))
+
+	e.Router.GET("/",
+    func(c echo.Context) error {
+		return controllers.HomeController(e.App, c)
+	})
 
 	e.Router.GET("/news", 
     func(c echo.Context) error {
@@ -43,7 +39,10 @@ func setupWebsite(e *core.ServeEvent) error {
     func(c echo.Context) error {
 		return controllers.NewsItemController(e.App, c)
 	})
-	// e.Router.GET("/news/:id", NewsItemController echo.WrapHandler(templ.Handler(controllers.NewsItemController(&e.App))))
-	// e.Router.GET("/hello", func(c echo.Context) error { return c.String(http.StatusOK, "Hello World") })
+
+	e.Router.GET("/me", 
+    func(c echo.Context) error {
+		return controllers.MeController(e.App, c)
+	})
 	return nil
 }

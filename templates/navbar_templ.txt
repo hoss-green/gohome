@@ -1,1 +1,1 @@
-<div class=\"w-full bg-base-200 h-16 flex items-center justify-between px-2\"><div><a class=\"text-primary font-bold text-xl\" href=\"/\">MADHOSS</a></div><div><button class=\"btn btn-secondary\">ME</button> <a class=\"btn btn-secondary\" href=\"/news\">NEWS</a></div></div>
+<div class=\"w-full bg-base-200 h-16 flex items-center justify-between px-2\"><div><a class=\"text-primary font-bold text-xl\" href=\"/\">MADHOSS</a></div><div><a class=\"btn btn-secondary\" href=\"/me\">ME</a> <a class=\"btn btn-secondary\" href=\"/news\">NEWS</a></div></div>
