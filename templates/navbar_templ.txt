@@ -1,0 +1,1 @@
+<div class=\"w-full bg-primary h-16 flex items-center justify-between px-2\"><div><h5 class=\"text-primary-content font-bold text-xl\">MADHOSS</h5></div><div><button class=\"btn btn-secondary\">BLOG</button> <button class=\"btn btn-secondary\">ABOUT</button></div></div>
