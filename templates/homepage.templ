@@ -1,5 +1,53 @@
 package templates
 
-templ HomePage() {
-  <div>Hello</div>
+import (
+  "gohome/models"
+)
+
+templ HomePage(projectItems []models.ProjectItem, newsItem models.NewsItem) {
+<div>
+  //hero/header
+  <div class="flex w-full justify-start items-end bg-gradient-to-r to-primary/50 from-base-100 " style="height:calc(100vh - 64px)">
+    <div class="flex flex-col mb-2 mx-2">
+      <div class="text-left text-2xl md:text-3xl text-neutral font-black opacity-80">GO | RUST | C# | TS</div>
+      <div class="text-left text-6xl md:text-7xl text-primary font-black">MADHOSS</div>
+    </div>
+  </div>
+  //news
+
+//  <div class="flex w-full flex-col items-center bg-base-300 py-16">
+//      <div class="flex justify-center items-center mb-4">
+//        <h5 class="text-center text-3xl md:text-5xl text-neutral font-light">{newsItem.Title}</h5>
+//      </div>
+//      <div class="w-full max-w-xl"> 
+//         {newsItem.Summary}
+//      </div>
+//  </div>
+//  //projects
+//  <div class="flex w-full items-center justify-center min-h-[20rem] px-2 flex-col-reverse lg:flex-row">
+//    <div class="flex gap-2 justify-end flex-col lg:flex-row">
+//      for _, item := range projectItems {
+//        <div class="bg-base-200 w-full lg:w-[33.33332%]">
+//          <a target="_blank" class="btn btn-outline btn-primary w-full border-opacity-50 h-36" href={ templ.SafeURL(item.Link) }>
+//            <div class="text-neutral flex flex-col items-center">
+//              <h5 class="text-lg">{item.Title}</h5>
+//              <p class="opacity-80">{item.Summary}</p>
+//            </div>
+//          </a>
+//        </div>
+//      }
+//      <div class="w-full justify-center flex lg:hidden">
+//        <a class="font-bold" href="/projects">View all Projects</a>
+//      </div>
+//    </div>
+//
+//    <div class="w-1/2 flex flex-col items-stretch">
+//      @header("Recent Projects") 
+//      <div class="w-full justify-center hidden lg:flex">
+//        <a class="font-bold" href="/projects">View all Projects</a>
+//      </div>
+//    </div>
+//  </div>
+
+</div>
 }

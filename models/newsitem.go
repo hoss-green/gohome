@@ -5,6 +5,6 @@ type NewsItem struct {
 	Created string `db:"created" json:"created"`
 	Updated string `db:"updated" json:"updated"`
 	Title   string `db:"title" json:"title"`
+	Summary string `db:"summary" json:"summary"`
 	Content string `db:"content" json:"content"`
 }
-

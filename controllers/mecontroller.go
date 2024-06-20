@@ -24,5 +24,5 @@ func MeController(e core.App, c echo.Context) error {
 		}
 		return c.String(500, string(val))
 	}
-	return render(c, templates.MePage(pageItem))
+	return render(c, templates.MePage(pageItem), false)
 }

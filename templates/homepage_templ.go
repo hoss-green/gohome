@@ -10,7 +10,11 @@ import "context"
 import "io"
 import "bytes"
 
-func HomePage() templ.Component {
+import (
+	"gohome/models"
+)
+
+func HomePage(projectItems []models.ProjectItem, newsItem models.NewsItem) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -23,7 +27,7 @@ func HomePage() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div><div class=\"flex w-full justify-start items-end bg-gradient-to-r to-primary/50 from-base-100 \" style=\"height:calc(100vh - 64px)\"><div class=\"flex flex-col mb-2 mx-2\"><div class=\"text-left text-2xl md:text-3xl text-neutral font-black opacity-80\">GO | RUST | C# | TS</div><div class=\"text-left text-6xl md:text-7xl text-primary font-black\">MADHOSS</div></div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

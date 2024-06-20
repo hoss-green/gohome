@@ -1,3 +1,0 @@
-<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>MADHOSS</title><link rel=\"stylesheet\" href=\"/assets/css/main.css\"></head><body class=\"\">
-<div class=\"w-full flex justify-center\"><div class=\"w-full max-w-3xl mx-2\">
-</div></div></body></html>

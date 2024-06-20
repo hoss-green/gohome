@@ -5,7 +5,7 @@ import "gohome/models"
 templ MePage(pageModel models.PageItem) {
   <div class="w-full">
     @header(pageModel.Title)
-    <div class="w-full main-news-body"> 
+    <div class="w-full main-news-body px-4"> 
        @templ.Raw(pageModel.Content)
     </div>
   </div>

@@ -30,7 +30,12 @@ func setupWebsite(e *core.ServeEvent) error {
 		return controllers.HomeController(e.App, c)
 	})
 
-	e.Router.GET("/news", 
+	e.Router.GET("/projects", 
+    func(c echo.Context) error {
+		return controllers.ProjectsController(e.App, c)
+	})
+
+	e.Router.GET("/feed", 
     func(c echo.Context) error {
 		return controllers.NewsListController(e.App, c)
 	})

@@ -31,6 +31,6 @@ func NewsItemController(e core.App, c echo.Context) error {
 		return c.String(500, string(val))
 	}
 
-	return render(c, templates.NewsItem(newsitem))
+	return render(c, templates.NewsItem(newsitem), false)
 	// c.String()
 }

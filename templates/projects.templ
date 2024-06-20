@@ -1,0 +1,24 @@
+package templates
+ 
+import (
+  "gohome/models"
+)
+
+templ Projects(projectItems []models.ProjectItem) {
+  <div class="w-full">
+    @header("Projects")
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 px-4">
+      for _, item := range projectItems {
+        <div class="grid-colspan-1 bg-base-200">
+          <a target="_blank" class="btn btn-outline btn-primary w-full border-opacity-50 h-36" href={ templ.SafeURL(item.Link) }>
+            <div class="text-neutral flex flex-col items-center">
+              <h5 class="text-xl">{item.Title}</h5>
+              <p class="opacity-80">{item.Summary}</p>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+}
+

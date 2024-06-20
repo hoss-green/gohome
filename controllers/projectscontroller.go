@@ -10,10 +10,10 @@ import (
 	"github.com/pocketbase/pocketbase/core"
 )
 
-func NewsListController(e core.App, c echo.Context) error {
-	newsListItems := []models.NewsListItem{}
+func ProjectsController(e core.App, c echo.Context) error {
+	projectItems := []models.ProjectItem{}
 
-	err := e.Dao().DB().NewQuery("SELECT id, created, title FROM news_items ORDER BY created DESC").All(&newsListItems)
+	err := e.Dao().DB().NewQuery("SELECT id, title, summary, link FROM projects").All(&projectItems)
 
 	if err != nil {
 		log.Printf("Select Error: %s\r\n", err)
@@ -24,5 +24,5 @@ func NewsListController(e core.App, c echo.Context) error {
 		return c.String(500, string(val))
 	}
 
-	return render(c, templates.NewsList(newsListItems), false)
+	return render(c, templates.Projects(projectItems), false)
 }

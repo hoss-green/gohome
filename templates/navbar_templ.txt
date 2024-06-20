@@ -1,1 +1,0 @@
-<div class=\"w-full bg-base-200 h-16 flex items-center justify-between px-2\"><div><a class=\"text-primary font-bold text-xl\" href=\"/\">MADHOSS</a></div><div><a class=\"btn btn-secondary\" href=\"/me\">Me</a> <a class=\"btn btn-secondary\" href=\"/news\">News</a></div></div>
