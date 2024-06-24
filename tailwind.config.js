@@ -16,6 +16,7 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
+      "acid",
       {
         my_theme: {
           ...require("daisyui/src/theming/themes")["black"],
