@@ -5,6 +5,8 @@ import (
 	"gohome/controllers"
 	"log"
 	"net/http"
+
+	"github.com/labstack/echo/v5/middleware"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/core"
@@ -60,6 +62,8 @@ func setupWebsite(e *core.ServeEvent) error {
 func setupStatic(e *core.ServeEvent) error {
 	var contentHandler = echo.WrapHandler(http.FileServer(http.FS(assets)))
 	e.Router.GET("/assets/*", contentHandler)
-
+  var contentRewrite = middleware.Rewrite(map[string]string{"/favicon.ico": "/assets/images/favicon.ico"})
+	// var favicoHandler = echo.WrapHandler(http.FileServer("/assets/images/favicon.ico")))
+	e.Router.GET("/favicon.ico", contentHandler, contentRewrite)
 	return nil
 }

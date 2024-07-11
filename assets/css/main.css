@@ -1555,15 +1555,6 @@ html {
   border-right-width: 0.05rem;
 }
 
-.border-t-0 {
-  border-top-width: 0px;
-}
-
-.border-primary {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
-}
-
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
 }
