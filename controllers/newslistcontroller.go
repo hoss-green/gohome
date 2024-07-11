@@ -13,7 +13,7 @@ import (
 func NewsListController(e core.App, c echo.Context) error {
 	newsListItems := []models.NewsListItem{}
 
-	err := e.Dao().DB().NewQuery("SELECT id, created, updated, title FROM news_items ORDER BY created DESC").All(&newsListItems)
+	err := e.Dao().DB().NewQuery("SELECT id, created, updated, title, published FROM news_items WHERE published = TRUE ORDER BY created DESC").All(&newsListItems)
 
 	if err != nil {
 		log.Printf("Select Error: %s\r\n", err)

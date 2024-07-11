@@ -13,7 +13,7 @@ import (
 func ProjectsController(e core.App, c echo.Context) error {
 	projectItems := []models.ProjectItem{}
 
-	err := e.Dao().DB().NewQuery("SELECT id, title, summary, link FROM projects").All(&projectItems)
+	err := e.Dao().DB().NewQuery("SELECT id, title, summary, link, published FROM projects where published = TRUE").All(&projectItems)
 
 	if err != nil {
 		log.Printf("Select Error: %s\r\n", err)
