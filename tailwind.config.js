@@ -10,13 +10,13 @@ module.exports = {
       fontFamily: {
         player: "'Press Start 2p'",
         sans: "'Red Hat Display'",
+        silkscreen: "'Silkscreen'",
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
-      "acid",
       {
         my_theme: {
           ...require("daisyui/src/theming/themes")["black"],

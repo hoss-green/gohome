@@ -41,7 +41,7 @@ func NewsList(newsListItems []models.NewsListItem) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		for _, item := range newsListItems {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"bg-base-200 mb-1 btn btn-outline btn-primary w-full border-opacity-50\" href=\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<a class=\"bg-base-200 mb-1 btn w-full border-opacity-50\" href=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -50,7 +50,7 @@ func NewsList(newsListItems []models.NewsListItem) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"text-neutral flex items-center justify-center\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"text-neutral flex items-center justify-center font-primary \">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

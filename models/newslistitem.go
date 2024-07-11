@@ -2,5 +2,7 @@ package models
 
 type NewsListItem struct {
 	Id    string
+	Created string `db:"created" json:"created"`
+	Updated string `db:"updated" json:"updated"`
 	Title string
 }

@@ -5,14 +5,12 @@ import (
 	"gohome/controllers"
 	"log"
 	"net/http"
-
-	// "github.com/labstack/echo/middleware"
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/core"
 )
 
-//go:embed  assets/css/*
+//go:embed  assets/*
 var assets embed.FS
 
 func main() {

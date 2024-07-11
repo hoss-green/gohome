@@ -40,7 +40,7 @@ func Projects(projectItems []models.ProjectItem) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		for _, item := range projectItems {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"grid-colspan-1 bg-base-200\"><a target=\"_blank\" class=\"btn btn-outline btn-primary w-full border-opacity-50 h-36\" href=\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"grid-colspan-1 bg-base-200\"><a target=\"_blank\" class=\"btn w-full border-opacity-50 h-36\" href=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -49,14 +49,14 @@ func Projects(projectItems []models.ProjectItem) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"text-neutral flex flex-col items-center\"><h5 class=\"text-xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"text-neutral flex flex-col items-center\"><h5 class=\"text-xl text-primary font-silkscreen\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(item.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/projects.templ`, Line: 15, Col: 45}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/projects.templ`, Line: 15, Col: 74}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {

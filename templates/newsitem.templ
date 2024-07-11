@@ -3,7 +3,7 @@ package templates
 import "gohome/models"
 
 templ NewsItem(newsItem models.NewsItem) {
-  <div class="w-full">
+  <div class="w-full text-silkscreen">
     @header(newsItem.Title)
     <div class="w-full main-news-body px-4"> 
        @templ.Raw(newsItem.Content)
