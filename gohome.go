@@ -56,6 +56,14 @@ func setupWebsite(e *core.ServeEvent) error {
 		func(c echo.Context) error {
 			return controllers.MeController(e.App, c)
 		})
+	e.Router.GET("/contact",
+		func(c echo.Context) error {
+			return controllers.ContactController(e.App, c)
+		})
+	e.Router.POST("/contact",
+		func(c echo.Context) error {
+			return controllers.SendContactControllerMessage(e.App, c)
+		})
 	return nil
 }
 

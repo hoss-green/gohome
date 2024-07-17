@@ -1,0 +1,29 @@
+package templates
+
+templ Contact(message string) {
+ <div class="w-full">
+    @header("Contact")
+  <form class="bg-base-200 flex flex-col gap-2 items-center" action="/contact" method="post">
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name!"
+    class="input input-bordered input-primary w-full max-w-lg" />
+  <input
+    type="email"
+    name="email"
+    placeholder="Contact Email"
+    class="input input-bordered input-primary w-full max-w-lg" />
+  <input
+    type="text"
+    name="summary"
+    placeholder="Summary"
+    class="input input-bordered input-primary w-full max-w-lg" />
+  <textarea name="message" class="textarea textarea-bordered textarea-primary w-full max-w-lg" placeholder="Message...."></textarea>
+  <button type="submit">SEND</button>
+  if message != "" {
+    <p>message</p>
+  }
+  </form>
+ </div>
+}

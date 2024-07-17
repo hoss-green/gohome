@@ -8,9 +8,7 @@ package templates
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "gohome/models"
-
-func NewsItem(newsItem models.NewsItem) templ.Component {
+func Contact(message string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
@@ -28,23 +26,25 @@ func NewsItem(newsItem models.NewsItem) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"w-full text-silkscreen\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"w-full\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = header(newsItem.Title).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = header("Contact").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"w-full main-news-body px-4\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"bg-base-200 flex flex-col gap-2 items-center\" action=\"/contact\" method=\"post\"><input type=\"text\" name=\"name\" placeholder=\"Your name!\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"email\" name=\"email\" placeholder=\"Contact Email\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"text\" name=\"summary\" placeholder=\"Summary\" class=\"input input-bordered input-primary w-full max-w-lg\"> <textarea name=\"message\" class=\"textarea textarea-bordered textarea-primary w-full max-w-lg\" placeholder=\"Message....\"></textarea> <button type=\"submit\">SEND</button> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.Raw(newsItem.Content).Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
+		if message != "" {
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>message</p>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</form></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
