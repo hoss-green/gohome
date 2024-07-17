@@ -34,12 +34,25 @@ func Contact(message string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"bg-base-200 flex flex-col gap-2 items-center\" action=\"/contact\" method=\"post\"><input type=\"text\" name=\"name\" placeholder=\"Your name!\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"email\" name=\"email\" placeholder=\"Contact Email\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"text\" name=\"summary\" placeholder=\"Summary\" class=\"input input-bordered input-primary w-full max-w-lg\"> <textarea name=\"message\" class=\"textarea textarea-bordered textarea-primary w-full max-w-lg\" placeholder=\"Message....\"></textarea> <button type=\"submit\">SEND</button> ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"bg-base-200 flex flex-col gap-2 items-center\" action=\"/contact\" method=\"post\"><input type=\"text\" name=\"name\" placeholder=\"Your name!\" required=\"\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"email\" name=\"email\" placeholder=\"Contact Email\" required=\"\" class=\"input input-bordered input-primary w-full max-w-lg\"> <input type=\"text\" name=\"summary\" placeholder=\"Summary\" required=\"\" class=\"input input-bordered input-primary w-full max-w-lg\"> <textarea required=\"\" name=\"message\" class=\"textarea textarea-bordered textarea-primary w-full max-w-lg\" placeholder=\"Message....\"></textarea> <button class=\"btn btn-secondary min-w-sm\" type=\"submit\">SEND</button> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if message != "" {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>message</p>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var2 string
+			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(message)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/contact.templ`, Line: 28, Col: 16}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

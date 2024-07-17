@@ -8,21 +8,24 @@ templ Contact(message string) {
     type="text"
     name="name"
     placeholder="Your name!"
+    required=""
     class="input input-bordered input-primary w-full max-w-lg" />
   <input
     type="email"
     name="email"
     placeholder="Contact Email"
+    required=""
     class="input input-bordered input-primary w-full max-w-lg" />
   <input
     type="text"
     name="summary"
     placeholder="Summary"
+    required=""
     class="input input-bordered input-primary w-full max-w-lg" />
-  <textarea name="message" class="textarea textarea-bordered textarea-primary w-full max-w-lg" placeholder="Message...."></textarea>
-  <button type="submit">SEND</button>
+  <textarea required="" name="message" class="textarea textarea-bordered textarea-primary w-full max-w-lg" placeholder="Message...."></textarea>
+  <button class="btn btn-secondary min-w-sm" type="submit">SEND</button>
   if message != "" {
-    <p>message</p>
+    <p>{ message }</p>
   }
   </form>
  </div>
